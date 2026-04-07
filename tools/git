@@ -1,0 +1,19 @@
+# common
+git status
+git log --oneline -20
+git diff
+git diff --cached
+# commit
+git add -A && git commit
+git add -A && git commit --amend --no-edit
+git push
+git push -u origin HEAD
+# branch
+git branch -a
+git checkout -b 
+git switch -
+git merge --no-ff 
+# undo
+git reset --soft HEAD~1
+git stash
+git stash pop

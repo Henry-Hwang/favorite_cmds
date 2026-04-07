@@ -1,0 +1,13 @@
+# system
+sudo apt update && sudo apt upgrade -y
+df -h
+free -h
+top
+htop
+# network
+ip addr
+curl -I https://www.google.com
+ss -tlnp
+# files
+find . -name "*.log" -mtime +7 -delete
+du -sh * | sort -rh | head -20

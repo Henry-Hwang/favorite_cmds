@@ -1,0 +1,5 @@
+# /home/henryh/work/src/rk3576_linux
+./build.sh debian
+./build.sh updateimg
+# /home/henryh/work/src/lubancat/LubanCat_SDK/app
+./scripts/install-overlay.sh

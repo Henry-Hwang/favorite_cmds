@@ -1,0 +1,7 @@
+systemctl status 
+systemctl start 
+systemctl stop 
+systemctl restart 
+systemctl enable 
+journalctl -u  -f
+journalctl -u  --since "1 hour ago"
