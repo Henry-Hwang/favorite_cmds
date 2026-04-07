@@ -1,4 +1,6 @@
 # system
+picocom -b 1500000 /dev/ttyUSB0
+ssh cat@192.168.1.108
 sudo apt update && sudo apt upgrade -y
 df -h
 free -h

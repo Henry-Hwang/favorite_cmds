@@ -7,7 +7,7 @@ FAVORITE_CMDS_DIR="${FAVORITE_CMDS_DIR:-$HOME/favorite_cmds}"
 _fc_load_local() {
     local file="$FAVORITE_CMDS_DIR/local"
     [[ -f "$file" ]] || return
-    local cwd matched=0 has_output=0
+    local cwd matched=0 has_output=0 match_dir=""
     cwd="$(pwd)"
     while IFS= read -r line || [[ -n "$line" ]]; do
         [[ -z "$line" ]] && continue
@@ -17,12 +17,13 @@ _fc_load_local() {
             dir="${dir%"${dir##*[![:space:]]}"}"
             if [[ "$cwd" == "$dir" || "$cwd" == "$dir"/* ]]; then
                 matched=1
+                match_dir="$dir"
             else
                 matched=0
             fi
         elif [[ $matched -eq 1 ]]; then
             if [[ $has_output -eq 0 ]]; then
-                echo -e "\033[33m── Local ──\033[0m"
+                echo -e "\033[33m── Local ($match_dir) ──\033[0m"
                 has_output=1
             fi
             echo "$line"

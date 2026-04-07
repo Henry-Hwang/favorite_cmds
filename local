@@ -3,3 +3,11 @@
 ./build.sh updateimg
 # /home/henryh/work/src/lubancat/LubanCat_SDK/app
 ./scripts/install-overlay.sh
+
+# /home/henryh/work/src/lubancat/LubanCat_SDK
+./build.sh LubanCat_rk3568_debian_lite_defconfig
+rm -f debian12/linaro-rk356x-lite-rootfs.img
+./build.sh debian
+./build.sh firmware
+./build.sh rootfs
+./build.sh updateimg
